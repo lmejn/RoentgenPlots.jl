@@ -3,6 +3,8 @@ module BeamLimitingDevicePlots
 using DoseCalculations
 import DoseCalculations.AbstractBixel
 
+using Plots
+
 """ Plot Functions for Beam Limiting Devices
 
 Plots jaw positions and multileafcollimator apertures.
