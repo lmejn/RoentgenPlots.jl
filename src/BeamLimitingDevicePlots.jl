@@ -15,21 +15,21 @@ export plot_bld, plot_bld!, axes_lims!, axes_lims
 
 #--- Generic BeamLimitingDevice Plot -----------------------------------------------------------------------------------
 """
-    plot_bld
+    plot_bld(args...; kwargs...)
 
-Main plot command for beam limiting devices (e.g. jaws, MLCs).
+Plot the geometry of a beam limiting device
 
-See ?plot_bld for more information.
+Creates a new figure. See ?plot_bld for more information.
 """
 plot_bld(args...; kwargs...) = plot_bld!(plot(), args...; kwargs...)
 
 """
-    plot_bld!
+    plot_bld!([p,] args...; kwargs...)
 
-Main plot command for beam limiting devices (e.g. jaws, MLCs).
+Plot the geometry of a beam limiting device
 
 Creates a 2D plot of the given beam limiting device in the beam limiting device
-(BLD) coordinate system, showing their relevant positions (e.g. aperture
+(BLD) coordinate system, showing their relevant geometry (e.g. aperture
 positions for MLC)
     
 Use `plot_bld` to create a new plot object, and `plot_bld!` to add to an
@@ -43,7 +43,9 @@ plot_bld!(args...; kwargs...) = plot_bld!(plot!(), args...; kwargs...)
 """
     plot_bld!(p, jaws::Jaws; kwargs...)
 
-When applied to jaws, plots a box indicating the jaw positions
+Plot the jaw positions.
+
+`kwargs...` are passed to Plots.jl `plot()`
 """
 function plot_bld!(p, jaws::Jaws; kwargs...)
     # Create a box out of the four jaw positions
@@ -56,11 +58,18 @@ end
 #--- MultiLeafCollimator Plot ------------------------------------------------------------------------------------------
 
 """
-    plot_bld!(p, mlcx, mlc::MultiLeafCollimator; kwargs...)
+    plot_bld!(p, mlc::MultiLeafCollimator; kwargs...)
 
-When applied to MultiLeafCollimator with leaf positions, plot the open aperture.
+Plot the aperture of a `MultiLeafCollimator` with leaf positions.
 
 Fills the area obstructed by leaves, unless `invert=true` where it fills the open aperture.
+
+Args:
+- `invert`: Fills the region **not** obscured by the leaves, defaults to `false`
+- `fill`: Whether to fill, defaults to `true`
+- `fillalpha`: Transparency of the fill, defaults to 0.1
+- `leaf_length`: The length of the leaves, defaults to 125 mm
+- Further `kwargs...` are passed to Plots.jl `plot()`
 """
 function plot_bld!(p, mlc::MultiLeafCollimator; invert=false, leaf_length=125., fill=true, fillalpha=0.1, kwargs...)
 
