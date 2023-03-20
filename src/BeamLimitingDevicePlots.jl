@@ -246,19 +246,16 @@ When no plot object given, applies to latest plot created.
 """
 axes_lims!(jaws::Jaws; pad=10.) = axes_lims!(plot!(), jaws; pad=pad)
 
-#--- Fluence Grid ------------------------------------------------------------------------------------------------------
+#--- Bixels ------------------------------------------------------------------------------------------------------------
 
-function edgepositions(bixels, i)
-    x = position.(bixels, i)
-    w = width.(bixels, i)
-    vcat(x[1]-0.5*w[1], x .+ 0.5*w)
-end
+rectangle(x, y, wx, wy) = Shape(x.+0.5*wx*[-1, 1, 1, -1], y.+0.5*wy*[-1, -1, 1, 1])
 
-function plot_bld!(p, bixelgrid::AbstractMatrix{<:AbstractBixel}, Ψ::AbstractMatrix; kwargs...)
-    x = edgepositions((@view bixelgrid[:, 1]), 1)
-    y = edgepositions((@view bixelgrid[1, :]), 2)
+function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; fillcolor=nothing, kwargs...)
 
-    heatmap!(p, x, y, Ψ'; kwargs...)
+    px, py = DoseCalculations.position(bixel)
+    wx, wy = DoseCalculations.width(bixel)
+
+    plot!(p, rectangle(px, py, wx, wy); fillcolor=fillcolor, kwargs...)
 end
 
 
