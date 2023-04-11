@@ -250,12 +250,19 @@ axes_lims!(jaws::Jaws; pad=10.) = axes_lims!(plot!(), jaws; pad=pad)
 
 rectangle(x, y, wx, wy) = Shape(x.+0.5*wx*[-1, 1, 1, -1], y.+0.5*wy*[-1, -1, 1, 1])
 
-function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; fillcolor=nothing, kwargs...)
+"""
+    plot_bld!(p, bixel::AbstractBixel; kwargs...)
+
+Plot a bixel.
+
+Use `line_z` and `fill_z` keyword arguments to add a colorbar.
+"""
+function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; kwargs...)
 
     px, py = DoseCalculations.position(bixel)
     wx, wy = DoseCalculations.width(bixel)
 
-    plot!(p, rectangle(px, py, wx, wy); fillcolor=fillcolor, kwargs...)
+    plot!(p, rectangle(px, py, wx, wy); kwargs...)
 end
 
 
