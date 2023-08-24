@@ -1,7 +1,6 @@
-# BeamLimitingDevicePlots.jl
+# RoentgenPlots.jl
 
-A package to plot beam-limiting devices using in external beam radiotherapy.
-It plots beam-limiting devices as defined in [DoseCalculations.jl](https://github.com/ACRF-Image-X-Institute/DoseCalculations.jl).
+A package to plot the types defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
 
 ![Aperture Example](examples/aperture.png)
 
@@ -13,14 +12,14 @@ It plots beam-limiting devices as defined in [DoseCalculations.jl](https://githu
 4. Enter package mode by typing `]`
 5. Install using 
     ```julia
-    add https://github.com/lmejn/BeamLimitingDevicePlots.jl
+    add https://github.com/lmejn/RoentgenPlots.jl
     ```
 
 ## Usage
 
 Import the package using,
 ```julia
-using BeamLimitingDevicePlots
+using RoentgenPlots
 ```
 
 The two main function are:
