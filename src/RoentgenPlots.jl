@@ -1,7 +1,7 @@
-module BeamLimitingDevicePlots
+module RoentgenPlots
 
-using DoseCalculations
-import DoseCalculations.AbstractBixel
+using Roentgen
+import Roentgen.AbstractBixel
 
 using Plots
 
@@ -259,8 +259,8 @@ To colour the bixel by a value (*e.g.* for a beamlet weight), can pass an option
 `value` argument.
 """
 function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; kwargs...)
-    px, py = DoseCalculations.position(bixel)
-    wx, wy = DoseCalculations.width(bixel)
+    px, py = Roentgen.position(bixel)
+    wx, wy = Roentgen.width(bixel)
 
     plot!(p, rectangle(px, py, wx, wy); aspect_ratio=1, kwargs...)
 end
@@ -299,4 +299,4 @@ function plot_bld!(p::AbstractPlot, bixels::AbstractArray{<:AbstractBixel},
     p
 end
 
-end # module BeamLimitingDevicePlots
+end # module RoentgenPlots

@@ -36,6 +36,6 @@ axes_lims!(args...; kwargs...)
 ```
 To set the axes limits of the figure based on the geometry of the beam-limiting device.
 
-See the example [notebook](https://github.com/lmejn/BeamLimitingDevicePlots.jl/blob/4ca901f4741e06ab698532a4a402d99430de3eef/examples/Plotting%20Beam%20Limiting%20Devices.ipynb) for usage.
+See the example [notebook](https://github.com/lmejn/RoentgenPlots.jl/blob/main/examples/Plotting%20Beam%20Limiting%20Devices.ipynb) for usage.
 
 
