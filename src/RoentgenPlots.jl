@@ -40,27 +40,6 @@ plot_bld!(args...; kwargs...) = plot_bld!(plot!(), args...; kwargs...)
 include("Jaws.jl")
 include("MultiLeafCollimator.jl")
 
-#--- Axes Limits -------------------------------------------------------------------------------------------------------
-
-"""
-    axes_lims!(p, jaws::Jaws; pad=10.)
-
-Set the axes limits to the position of the jaws.
-
-By default, a pad of 10 mm is added to each side.
-"""
-function axes_lims!(p, jaws::Jaws; pad=10.)
-    padding = pad.*[-1, 1]
-    plot!(p, xlim=jaws.x .+ padding, ylim=jaws.y .+ padding)
-end
-
-"""
-    axes_lims!(jaws::Jaws; pad=10.)
-
-When no plot object given, applies to latest plot created.
-"""
-axes_lims!(jaws::Jaws; pad=10.) = axes_lims!(plot!(), jaws; pad=pad)
-
 #--- Bixels ------------------------------------------------------------------------------------------------------------
 
 rectangle(x, y, wx, wy) = Shape(x.+0.5*wx*[-1, 1, 1, -1], y.+0.5*wy*[-1, -1, 1, 1])
