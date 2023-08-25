@@ -11,3 +11,7 @@ makedocs(
         ]
     ]
 )
+
+deploydocs(
+    repo = "github.com/lmejn/RoentgenPlots.jl.git",
+)
