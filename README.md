@@ -2,7 +2,7 @@
 
 A package to plot the types defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
 
-![Aperture Example](examples/aperture.png)
+![Aperture Example](docs/src/assets/feature-plot.svg)
 
 ## Installation
 

@@ -7,6 +7,8 @@ mlc, w, jaws, bixels = load("assets/plot-data.jld2", "mlc", "w", "jaws", "bixels
 
 This notebook provides examples of how to plot with RoentgenPlots.jl, along various settings.
 
+![RoentgenPlots.jl example plot](assets/feature-plot.svg)
+
 RoentgenPlots.jl provides two methods for plotting beam-limiting device positions `plot_bld` and `plot_bld!` functions:
 
 - `plot_bld(bld::AbstractBeamLimitingDevice; kwargs...)` takes beam-limiting device types as defined in Roentgen.jl and plots them on a new figure
