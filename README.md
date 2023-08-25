@@ -1,6 +1,6 @@
 # RoentgenPlots.jl
 
-A package to plot the types defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
+RoentgenPlots.jl provides functions to plot using [Plots.jl](https://docs.juliaplots.org) datatypes defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
 
 ![Aperture Example](docs/src/assets/feature-plot.svg)
 
@@ -30,6 +30,7 @@ To plot the geometry of beam-limiting devices. Currently supported devices are:
 
 - Multi-Leaf Collimator
 - Jaws
+- Bixels
 
 ```julia
 axes_lims!(args...; kwargs...)

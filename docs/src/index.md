@@ -1,6 +1,6 @@
 # RoentgenPlots.jl
 
-This notebook provides examples of how to plot with RoentgenPlots.jl, along various settings.
+RoentgenPlots.jl provides functions to plot using [Plots.jl](https://docs.juliaplots.org) datatypes defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
 
 ![RoentgenPlots.jl example plot](assets/feature-plot.svg)
 
