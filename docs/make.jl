@@ -1,3 +1,6 @@
-using Documenter, RoentgenPlots
+using Documenter, RoentgenPlots, Plots, Roentgen
 
-makedocs(sitename="RoentgenPlots.jl")
+makedocs(
+    sitename="RoentgenPlots.jl",
+    modules = [RoentgenPlots],
+)
