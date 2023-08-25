@@ -21,7 +21,13 @@ end
     @test _check_type(plot_bld(mlc; fill=false))
 end
 
-@testset "Bixels"
+@testset "Bixels" begin
     bixel = Bixel(rand(2), rand(2))
-    plot_bld
+    @test _check_type(plot_bld(bixel))
+    @test _check_type(plot_bld(bixel, rand()))
+
+    bixels = [Bixel(i*rand(2), i*rand(2)) for i=1:2]
+    @test _check_type(plot_bld(bixels))
+    @test _check_type(plot_bld(bixels, rand(2)))
+end
 
