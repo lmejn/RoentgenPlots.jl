@@ -1,6 +1,6 @@
 #--- Bixels ------------------------------------------------------------------------------------------------------------
 
-rectangle(x, y, wx, wy) = Shape(x.+0.5*wx*[-1, 1, 1, -1], y.+0.5*wy*[-1, -1, 1, 1])
+_rectangle(x, y, wx, wy) = Shape(x.+0.5*wx*[-1, 1, 1, -1], y.+0.5*wy*[-1, -1, 1, 1])
 
 """
     plot_bld!(p, bixel::AbstractBixel[, value]; kwargs...)
@@ -12,9 +12,9 @@ To colour the bixel by a value (*e.g.* for a beamlet weight), can pass an option
 """
 function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; kwargs...)
     px, py = Roentgen.getedge(bixel)
-    wx, wy = Roentgen.getedge(bixel)
+    wx, wy = Roentgen.getwidth(bixel)
 
-    plot!(p, rectangle(px, py, wx, wy); aspect_ratio=1, kwargs...)
+    plot!(p, _rectangle(px, py, wx, wy); aspect_ratio=1, kwargs...)
 end
 
 function plot_bld!(p::AbstractPlot, bixel::AbstractBixel, value; kwargs...)
