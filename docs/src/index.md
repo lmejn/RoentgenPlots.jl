@@ -28,6 +28,18 @@ Calling `plot_bld` with jaws will plot a simple rectangle where the jaw position
 plot_bld!(p, jaws::Jaws; kwargs...)
 ```
 
+### Axes Limits
+
+As well as plotting the positions of the jaws, the axis limits can also be set based on the jaw positions,
+```@example abc
+    axes_lims!(jaws)
+```
+
+```@docs 
+axes_lims!(p, jaws::Jaws; pad=10.)
+```
+
+
 ## Multi-Leaf Collimator 
 
 Calling `plot_bld!` with an MLC fills in the region obscured by the leaves.
