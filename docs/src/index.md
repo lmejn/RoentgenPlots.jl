@@ -1,3 +1,8 @@
+```@setup abc
+using Roentgen, RoentgenPlots, FileIO
+mlc, w, jaws, bixels = load("assets/plot-data.jld2", "mlc", "w", "jaws", "bixels")
+```
+
 # RoentgenPlots.jl
 
 This notebook provides examples of how to plot with RoentgenPlots.jl, along various settings.
@@ -9,16 +14,23 @@ RoentgenPlots.jl provides two methods for plotting beam-limiting device position
 
 Following the notation used in Plots.jl, `plot_bld` creates a new figure, while `plot_bld!` adds to an existing plot (which can be specified by providing `p`).
 
+
+## Jaws
+
+Calling `plot_bld` with jaws will plot a simple rectangle where the jaw positions lie,
+```@example abc
+    plot_bld(jaws)
+```
+
+```@docs
+plot_bld!(p, jaws::Jaws; kwargs...)
+```
+
 ## Multi-Leaf Collimator 
 
 Calling `plot_bld!` with an MLC fills in the region obscured by the leaves.
 
-```@setup abc
-using Roentgen, RoentgenPlots, FileIO
-```
-
 ```@example abc
-mlc = load("data/mlc.jld2", "mlc")
 plot_bld(mlc)
 ```
 
