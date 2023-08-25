@@ -29,5 +29,8 @@ end
     bixels = [Bixel(i*rand(2), i*rand(2)) for i=1:2]
     @test _check_type(plot_bld(bixels))
     @test _check_type(plot_bld(bixels, rand(2)))
-end
 
+    bixels = BixelGrid(-10:5.:10,-2.:1.:2)
+    @test plot_bld(bixels) |> _check_type
+    @test plot_bld(bixels, rand(size(bixels)...)) |> _check_type
+end
