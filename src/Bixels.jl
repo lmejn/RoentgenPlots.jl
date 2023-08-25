@@ -11,7 +11,7 @@ To colour the bixel by a value (*e.g.* for a beamlet weight), can pass an option
 `value` argument.
 """
 function plot_bld!(p::AbstractPlot, bixel::AbstractBixel; kwargs...)
-    px, py = Roentgen.getedge(bixel)
+    px, py = Roentgen.getcenter(bixel)
     wx, wy = Roentgen.getwidth(bixel)
 
     plot!(p, _rectangle(px, py, wx, wy); aspect_ratio=1, kwargs...)
