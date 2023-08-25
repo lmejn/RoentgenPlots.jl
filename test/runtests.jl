@@ -5,6 +5,7 @@ using RoentgenPlots
 @testset "Jaws" begin
     jaws = Jaws(sort(rand(2)), sort(rand(2)))
     @test typeof(plot_bld(jaws)) <: RoentgenPlots.AbstractPlot
+    @test typeof(axes_lims!(jaws)) <: RoentgenPlots.AbstractPlot
 end
 
 @testset "MultiLeafCollimator" begin
