@@ -1,6 +1,7 @@
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://lmejn.github.io/RoentgenPlots.jl/stable/)
 [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://lmejn.github.io/RoentgenPlots.jl/dev)
 [![CI](https://github.com/lmejn/RoentgenPlots.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/lmejn/RoentgenPlots.jl/actions/workflows/CI.yml)
+[![codecov](https://codecov.io/gh/lmejn/RoentgenPlots.jl/graph/badge.svg?token=YA1X5BFFB3)](https://codecov.io/gh/lmejn/RoentgenPlots.jl)
 
 # RoentgenPlots.jl
 
