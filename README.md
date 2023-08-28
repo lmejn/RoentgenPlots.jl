@@ -5,7 +5,7 @@
 
 # RoentgenPlots.jl
 
-RoentgenPlots.jl provides functions to plot using [Plots.jl](https://docs.juliaplots.org) datatypes defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl).
+RoentgenPlots.jl provides functions to plot datatypes defined in [Roentgen.jl](https://github.com/Image-X-Institute/Roentgen.jl) using [Plots.jl](https://docs.juliaplots.org).
 
 ![Aperture Example](docs/src/assets/feature-plot.svg)
 
